@@ -59,14 +59,20 @@ void LinkedList<T>::insert_after(T value, T new_value) {
 }
 template<class T>
 void LinkedList<T>::print() {
+	if (head == NULL)
+	{
+		cout << "Empty List." << endl;
+		return;
+	}
+	cout << "Linked List : ";
 	Node<T>* N_head = head;
 	do 
 	{
-		cout<< N_head->Value<<endl;
+		cout << " " << N_head->Value;
 		N_head = N_head->Next;
 		
 	} while (N_head != NULL);
-
+	cout << endl;
 
 }
 void TemporaryFunction()
