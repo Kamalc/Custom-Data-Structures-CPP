@@ -31,5 +31,7 @@ public:
 	Node<T>* find(T target);
 	void insert_after(T value, T new_value);
 	void print();
+	void remove_element(T value);
+	void remove_element(Node<T>* Node);
 };
 #endif // LINKEDLIST_H

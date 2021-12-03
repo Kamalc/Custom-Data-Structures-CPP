@@ -81,6 +81,57 @@ void LinkedList<T>::print() {
 
 }
 
+template<class T>
+void LinkedList<T>::remove_element(T value) {
+
+	Node<T>*  prev , *current;
+	current = prev= head;
+
+	while (current != NULL && current->Value != value)
+	{
+		prev = current;
+		current = current->Next;
+	}
+
+	if (current == NULL)
+	{
+		cout << "Can't remove a not existing element\n";
+		return void();
+	}
+
+	if (prev == head)
+		head = head->Next;
+	else
+		prev->Next = current->Next;
+	
+	size--;
+
+}
+template<class T>
+void LinkedList<T>::remove_element(Node<T> *target_Node ) {
+	Node<T>* prev, * current;
+	current = prev = head;
+
+	while (current != NULL && current != target_Node)
+	{
+		prev = current;
+		current = current->Next;
+	}
+
+	if (current == NULL)
+	{
+		cout << "Can't remove a not existing element\n";
+		return void();
+	}
+
+	if (prev == head)
+		head = head->Next;
+	else
+		prev->Next = current->Next;
+
+	size--;
+
+}
 void TemporaryFunction()
 {
 	LinkedList<int> test;
@@ -88,4 +139,6 @@ void TemporaryFunction()
 	test.push_back(1);
 	test.push_front(1);
 	test.print();
+	test.remove_element(5);
+	test.remove_element(test.head);
 }
