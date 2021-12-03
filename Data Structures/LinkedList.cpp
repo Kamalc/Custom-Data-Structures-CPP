@@ -6,7 +6,7 @@ LinkedList<T>::LinkedList() {
 }
 
 template<class T>
-void LinkedList<T>::K_Push_Front(T value) {
+void LinkedList<T>::push_front(T value) {
 
 	Node<T>* temp_ptr;
 	temp_ptr = new Node<T>;
@@ -19,7 +19,7 @@ void LinkedList<T>::K_Push_Front(T value) {
 }
 
 template<class T>
-void LinkedList<T>::K_Push_Back(T value) {
+void LinkedList<T>::push_back(T value) {
 	Node<T>* temp = new Node<T>;
 	temp->Value = value;
 	temp->Next = NULL;
@@ -28,7 +28,7 @@ void LinkedList<T>::K_Push_Back(T value) {
 	size++;
 }
 template<class T>
-Node<T>* LinkedList<T>::Search_by_count(T target) {
+Node<T>* LinkedList<T>::find(T target) {
 	Node<T>* Current_Head = head;
 	if (Current_Head == NULL)
 		return Current_Head;
@@ -44,9 +44,9 @@ Node<T>* LinkedList<T>::Search_by_count(T target) {
 }
 
 template<class T>
-void LinkedList<T>::Insert_After(T value, T new_value) {
+void LinkedList<T>::insert_after(T value, T new_value) {
 
-	Node<T>* N_Head = Search_by_count(value);
+	Node<T>* N_Head = find(value);
 	if (N_Head == NULL) {
 		cout << "Element Not Exist\n";
 		return void();
@@ -57,10 +57,23 @@ void LinkedList<T>::Insert_After(T value, T new_value) {
 	N_Head->Next = temp;
 	size++;
 }
+template<class T>
+void LinkedList<T>::print() {
+	Node<T>* N_head = head;
+	do 
+	{
+		cout<< N_head->Value<<endl;
+		N_head = N_head->Next;
+		
+	} while (N_head != NULL);
+
+
+}
 void TemporaryFunction()
 {
 	LinkedList<int> test;
-	test.Insert_After(1, 1);
-	test.K_Push_Back(1);
-	test.K_Push_Front(1);
+	test.insert_after(1, 1);
+	test.push_back(1);
+	test.push_front(1);
+	test.print();
 }

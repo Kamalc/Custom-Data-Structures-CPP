@@ -26,9 +26,10 @@ public:
 public:
 	LinkedList();
 
-	void K_Push_Front(T value);
-	void K_Push_Back(T value);
-	Node<T>* Search_by_count(T target);
-	void Insert_After(T value, T new_value);
+	void push_front(T value);
+	void push_back(T value);
+	Node<T>* find(T target);
+	void insert_after(T value, T new_value);
+	void print();
 };
 #endif // LINKEDLIST_H

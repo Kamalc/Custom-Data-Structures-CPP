@@ -8,12 +8,12 @@ int main()
 	LinkedList<int> test;
 
 	for (int i = 0; i < 5; i++) {
-		test.K_Push_Front(i);
+		test.push_front(i);
 	}
-	test.Insert_After(2, 25);
+	test.insert_after(2, 25);
 	cout << "      Hello   \n";
-	test.K_Push_Back(15);
-	test.Search_by_count(10);
+	test.push_back(15);
+	test.print();
 
 
 
