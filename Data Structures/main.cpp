@@ -8,7 +8,7 @@ int main()
 	LinkedList<int> test;
 	test.print();
 	for (int i = 0; i < 5; i++) {
-		test.push_front(i);
+		test.push_back(i);
 	}
 	test.insert_after(2, 25);
 	test.push_back(15);

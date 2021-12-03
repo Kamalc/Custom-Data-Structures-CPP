@@ -23,8 +23,12 @@ void LinkedList<T>::push_back(T value) {
 	Node<T>* temp = new Node<T>;
 	temp->Value = value;
 	temp->Next = NULL;
-	tail->Next = temp;
+	if (tail != NULL)
+		tail->Next = temp;
+
 	tail = temp;
+	if (!size)
+		head = tail;
 	size++;
 }
 template<class T>
@@ -32,6 +36,7 @@ Node<T>* LinkedList<T>::find(T target) {
 	Node<T>* Current_Head = head;
 	if (Current_Head == NULL)
 		return Current_Head;
+
 	while (Current_Head->Next != NULL && Current_Head->Value != target) {
 		cout << Current_Head->Value << "   " << endl;
 		Current_Head = Current_Head->Next;
@@ -75,6 +80,7 @@ void LinkedList<T>::print() {
 	cout << endl;
 
 }
+
 void TemporaryFunction()
 {
 	LinkedList<int> test;
