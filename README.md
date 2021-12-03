@@ -1,12 +1,8 @@
 # Custom-Data-Structures-CPP
 This Repo for Implement Famous data structures manually Using C++ 
 ## Data Structures:
-- [x] Linked List:
 
-     - [x] push_back
-     - [x] push_front
-     - [x] remove_element (Node or Value)
-     - [x] find
-     - [x] insert_after
-     - [x] print (for Debug)
-
+| Task           | push_back | push_front| find |remove element| insert after |print|
+|----------------|-----------|-----------|----- |--------------|--------------|-----|
+| Linked List    | <ul><li>- [x] Done | <ul><li>- [x] Done  | <ul><li>- [x] Done  | <ul><li>- [x] Node</li><li>- [x] Value</li></ul>|<ul><li>- [x] Done  |<ul><li>- [x] Done
+| Queue     | <ul><li>- [ ] Done | <ul><li>- [ ] Done  | <ul><li>- [ ] Done  | <ul><li>- [ ] Node</li><li>- [ ] Value</li></ul>|<ul><li>- [ ] Done  |<ul><li>- [ ] Done
