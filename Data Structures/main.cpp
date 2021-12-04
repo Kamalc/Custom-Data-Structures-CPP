@@ -1,19 +1,20 @@
 #include <iostream>
 #include"LinkedList.h"
 #include"KS_Queue.h"
+#include"Stack.h"
 using namespace std;
 
 
-int main()
+void TestQueue()
 {
 	KS_Queue<int> test;
 
 	for (int i = 0; i < 5; i++)
 	{
 		test.push(i);
-	}	
+	}
 	cout << test.empty() << endl;
-	cout<< test.size << endl;
+	cout << test.size << endl;
 	cout << test.front() << endl;
 	cout << test.back() << endl;
 
@@ -25,7 +26,7 @@ int main()
 	test.print();
 	for (int i = 1; i <= 10; i++)
 	{
-		test.push(i*10);
+		test.push(i * 10);
 		test.pop();
 		test.print();
 
@@ -40,5 +41,32 @@ int main()
 	cout << test.front() << endl;
 	cout << test.back() << endl;
 
+}
+void test_stack()
+{
+	Stack<int>s;
+
+	for (int i = 1; i <= 5; i++)
+	{
+		s.push(i);
+	}
+	s.print();
+	s.clear();
+	for (int i = 1; i <= 5; i++)
+	{
+		s.push(i * 10);
+	}
+	s.print();
+	for (int i = 1; i <= 5; i++)
+	{
+		s.pop();
+		s.print();
+	}
+
+
+}
+int main()
+{
+	test_stack();
 	return 0;
 }

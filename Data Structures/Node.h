@@ -4,4 +4,6 @@ class Node {
 public:
 	T Value;
 	Node* Next;
+	
 };
+
