@@ -1,25 +1,18 @@
 #pragma once
 #ifndef LINKEDLIST_H 
 #define LINKEDLIST_H
+#include "Node.h"
 
 #include<iostream>
 using namespace std;
 
 
 
-template<class T>
-class Node {
-public:
-	T Value;
-	Node* Next;
-};
+
 template<class T>
 class LinkedList {
 
-
 public:
-
-
 	Node<T>* head;
 	Node<T>* tail;
 	int size = 0;
