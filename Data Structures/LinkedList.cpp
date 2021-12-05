@@ -131,13 +131,3 @@ void LinkedList<T>::remove_element(Node<T> *target_Node ) {
 	size--;
 
 }
-void TemporaryFunction()
-{
-	LinkedList<int> test;
-	test.insert_after(1, 1);
-	test.push_back(1);
-	test.push_front(1);
-	test.print();
-	test.remove_element(5);
-	test.remove_element(test.head);
-}

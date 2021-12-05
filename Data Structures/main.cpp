@@ -7,6 +7,19 @@
 using namespace std;
 
 
+void TestLinkedList()
+{
+	LinkedList<int> test;
+
+	for (int i = 0; i < 5; i++) {
+		test.push_front(i);
+	}
+	test.insert_after(2, 25);
+	cout << "      Hello   \n";
+	test.push_back(15);
+	test.print();
+
+}
 void TestQueue()
 {
 	KS_Queue<int> test;
@@ -84,6 +97,6 @@ void test_BST()
 
 int main()
 {
-	TestQueue();
+	TestLinkedList();
 	return 0;
 }

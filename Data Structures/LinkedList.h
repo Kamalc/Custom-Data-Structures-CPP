@@ -28,3 +28,4 @@ public:
 	void remove_element(Node<T>* Node);
 };
 #endif // LINKEDLIST_H
+#include"LinkedList.cpp"
