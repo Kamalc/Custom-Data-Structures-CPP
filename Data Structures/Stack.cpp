@@ -7,6 +7,7 @@ template<class T>
 Stack<T>::Stack()
 {
 	head = NULL;
+	size = 0;
 }
 
 template<class T>

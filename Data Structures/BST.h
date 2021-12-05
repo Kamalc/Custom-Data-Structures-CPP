@@ -1,4 +1,6 @@
 #pragma once
+#ifndef BST_H 
+#define BST_H
 
 #include<iostream>
 using namespace std;
@@ -7,13 +9,17 @@ using namespace std;
 template<class T>
 class BST
 {
+protected:
+	void Inorder(TNode<T>* R);
 public:
 	TNode<T>* root;
 	int size;
 
 	BST();
+	~BST() {};
 	void insert(T value);
-	TNode<T>* search(T value);
-
+	void print();
 
 };
+#endif
+#include"BST.cpp""

@@ -9,6 +9,8 @@ BST<T>::BST()
 	size = 0;
 }
 
+
+
 template<class T>
 inline void BST<T>::insert(T value)
 {
@@ -68,9 +70,22 @@ inline void BST<T>::insert(T value)
 
 }
 
-
-void BSTtemporaryFunction()
+template<class T>
+void BST<T>::print()
 {
-	BST<int> test;
-	test.insert(6);
+	Inorder(root);
 }
+
+template<class T>
+void BST<T>::Inorder(TNode<T>* current )
+{
+
+	if (current == NULL)
+		return;
+	Inorder(current->Left);
+	cout << current->Value << endl;
+	Inorder(current->Right);
+
+
+}
+

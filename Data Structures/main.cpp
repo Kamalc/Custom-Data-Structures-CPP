@@ -79,7 +79,7 @@ void test_BST()
 	test.insert(2);
 	test.insert(11);
 
-
+	test.print();
 }
 int main()
 {
