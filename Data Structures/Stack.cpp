@@ -69,12 +69,3 @@ inline T Stack<T>::top()
 	return head->Value;
 }
 
-void StacktemporaryFunction()
-{
-	Stack<int> test;
-	test.pop();
-	test.push(5);
-	test.top();
-	test.print();
-	test.clear();
-}

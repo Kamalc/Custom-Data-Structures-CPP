@@ -1,4 +1,6 @@
 #pragma once
+#ifndef STACK_H 
+#define STACK_H
 #include "Node.h"
 #include<iostream>
 using namespace std;
@@ -23,3 +25,5 @@ public:
 
 };
 
+#endif
+#include"Stack.cpp""
