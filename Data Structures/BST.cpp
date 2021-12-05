@@ -15,7 +15,7 @@ template<class T>
 inline void BST<T>::insert(T value)
 {
 
-	TNode<T>* temp= root;
+	TNode<T>* temp = root;
 	TNode<T>* newNode = new TNode<T>;
 	newNode->Value = value;
 
@@ -74,6 +74,54 @@ template<class T>
 void BST<T>::print()
 {
 	Inorder(root);
+}
+
+template<class T>
+int BST<T>::count(T value)
+{
+	TNode<T>* temp = root;
+	while (temp != NULL)
+	{
+		if (temp->Value > value)
+		{
+				temp = temp->Left;
+		}
+		else if (temp->Value < value)
+		{
+				temp = temp->Right;
+		}
+		else
+		{
+			
+			return temp->cnt;
+		}
+	}
+
+	return 0;
+}
+
+template<class T>
+T BST<T>::min()
+{
+	TNode<T>* temp = root;
+	while (temp->Left != NULL)
+	{
+		temp = temp->Left;
+	}
+
+	return temp->Value;
+}
+
+template<class T>
+T BST<T>::max()
+{
+	TNode<T>* temp = root;
+	while (temp->Right != NULL)
+	{
+		temp = temp->Right;
+	}
+
+	return temp->Value;
 }
 
 template<class T>

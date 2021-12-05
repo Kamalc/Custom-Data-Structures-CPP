@@ -16,10 +16,12 @@ public:
 	int size;
 
 	BST();
-	~BST() {};
 	void insert(T value);
 	void print();
+	int  count(T value);
+	T min();
+	T max();
 
 };
 #endif
-#include"BST.cpp""
+#include"BST.cpp"

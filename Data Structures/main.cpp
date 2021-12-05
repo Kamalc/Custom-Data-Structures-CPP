@@ -91,12 +91,16 @@ void test_BST()
 	test.insert(3);
 	test.insert(2);
 	test.insert(11);
+	test.insert(25);
 
 	test.print();
+	//cout << test.count(5) << endl;
+	cout << test.min() << endl;
+	cout << test.max() << endl;
 }
 
 int main()
 {
-	TestLinkedList();
+	test_BST();
 	return 0;
 }
