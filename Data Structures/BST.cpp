@@ -104,24 +104,22 @@ template<class T>
 T BST<T>::min()
 {
 	TNode<T>* temp = root;
-	while (temp->Left != NULL)
-	{
-		temp = temp->Left;
-	}
-
-	return temp->Value;
+	return min(root);
 }
 
 template<class T>
 T BST<T>::max()
 {
 	TNode<T>* temp = root;
-	while (temp->Right != NULL)
-	{
-		temp = temp->Right;
-	}
+	return max(root);
+}
 
-	return temp->Value;
+template<class T>
+T BST<T>::successor()
+{
+
+
+	return T();
 }
 
 template<class T>
@@ -135,5 +133,27 @@ void BST<T>::Inorder(TNode<T>* current )
 	Inorder(current->Right);
 
 
+}
+
+template<class T>
+T BST<T>::min(TNode<T>* node)
+{
+	while (node->Left != NULL)
+	{
+		node = node->Left;
+	}
+
+	return node->Value;
+}
+
+template<class T>
+T BST<T>::max(TNode<T>* node)
+{
+	while (node->Right != NULL)
+	{
+		node = node->Right;
+	}
+
+	return node->Value;
 }
 

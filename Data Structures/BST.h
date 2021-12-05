@@ -10,7 +10,9 @@ template<class T>
 class BST
 {
 protected:
-	void Inorder(TNode<T>* R);
+	void Inorder(TNode<T>* node);
+	T min(TNode<T>* node);
+	T max(TNode<T>* node);
 public:
 	TNode<T>* root;
 	int size;
@@ -21,6 +23,7 @@ public:
 	int  count(T value);
 	T min();
 	T max();
+	T successor();
 
 };
 #endif
