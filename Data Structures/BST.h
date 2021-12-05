@@ -13,7 +13,7 @@ public:
 
 	BST();
 	void insert(T value);
-
+	TNode<T>* search(T value);
 
 
 };

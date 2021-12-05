@@ -72,15 +72,14 @@ void test_BST()
 {
 	BST<int> test;
 	test.insert(5);
-
 	test.insert(10);
 	test.insert(5);
 	test.insert(20);
-
-
 	test.insert(3);
 	test.insert(2);
 	test.insert(11);
+
+
 }
 int main()
 {

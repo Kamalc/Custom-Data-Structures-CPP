@@ -2,9 +2,11 @@
 
 
 template<class T>
+
 BST<T>::BST()
 {
 	root = NULL;
+	size = 0;
 }
 
 template<class T>
@@ -18,6 +20,7 @@ inline void BST<T>::insert(T value)
 	if (root == NULL)
 	{
 		root =  newNode;
+		size++;
 	}
 	else
 	{
@@ -30,6 +33,7 @@ inline void BST<T>::insert(T value)
 				{
 					temp->Left = newNode;
 					newNode->Parent = temp;
+					size++;
 				}
 				else
 				{
@@ -42,7 +46,7 @@ inline void BST<T>::insert(T value)
 				{
 					temp->Right = newNode;
 					newNode->Parent = temp;
-
+					size++;
 				}
 				else
 				{
