@@ -2,6 +2,8 @@
 #include"LinkedList.h"
 #include"KS_Queue.h"
 #include"Stack.h"
+#include"BST.h"
+
 using namespace std;
 
 
@@ -65,8 +67,23 @@ void test_stack()
 
 
 }
+
+void test_BST()
+{
+	BST<int> test;
+	test.insert(5);
+
+	test.insert(10);
+	test.insert(5);
+	test.insert(20);
+
+
+	test.insert(3);
+	test.insert(2);
+	test.insert(11);
+}
 int main()
 {
-	test_stack();
+	test_BST();
 	return 0;
 }
