@@ -14,6 +14,7 @@ protected:
 	T min(TNode<T>* node);
 	T max(TNode<T>* node);
 	TNode<T>* Search (T value);
+	TNode<T>* successor(TNode<T>* node);
 public:
 	TNode<T>* root;
 	int size;

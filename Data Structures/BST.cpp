@@ -99,6 +99,33 @@ T BST<T>::max()
 	return max(root);
 }
 
+template <class T>
+TNode<T>* BST<T>::successor(TNode<T>* node)
+{
+	if (node == NULL)
+	{
+		cout << "Element does not exist on the tree" << endl;
+		return nullptr;
+	}
+	if (node->Right != NULL)
+	{
+		return Search(min(node->Right));
+	}
+	while (node->Parent != NULL)
+	{
+		if (node->Parent->Value > node->Value)
+		{
+			return node->Parent;
+		}
+		node = node->Parent;
+	}
+	cout << "No successor for this element" << endl;
+	return nullptr;
+
+}
+
+
+
 template<class T>
 T BST<T>::successor(T value)
 {
@@ -108,20 +135,9 @@ T BST<T>::successor(T value)
 		cout << "Element does not exist on the tree" << endl;
 		return T();
 	}
-	if (temp->Right != NULL)
-	{
-		return min(temp->Right);
-	}
-	while (temp->Parent != NULL)
-	{
-		if (temp->Parent->Value > temp->Value)
-		{
-			return temp->Parent->Value  ;
-		}
-		temp = temp->Parent;
-	}
-	cout << "No successor for this element" << endl;
-	return T();
+	temp = successor(temp);
+	return temp->Value;
+	
 }
 
 template<class T>
