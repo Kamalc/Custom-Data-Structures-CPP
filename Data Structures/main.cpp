@@ -92,11 +92,15 @@ void test_BST()
 	test.insert(2);
 	test.insert(11);
 	test.insert(25);
+	test.insert(5);
 
-	test.print();
+	//test.print();
+	cout <<"   "<< endl;
 	//cout << test.count(5) << endl;
-	cout << test.min() << endl;
-	cout << test.max() << endl;
+	//cout << test.min() << endl;
+	//cout << test.max() << endl;
+	cout << endl;
+	cout << test.successor(2) << endl;
 }
 
 int main()

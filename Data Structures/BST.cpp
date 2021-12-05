@@ -79,24 +79,9 @@ void BST<T>::print()
 template<class T>
 int BST<T>::count(T value)
 {
-	TNode<T>* temp = root;
-	while (temp != NULL)
-	{
-		if (temp->Value > value)
-		{
-				temp = temp->Left;
-		}
-		else if (temp->Value < value)
-		{
-				temp = temp->Right;
-		}
-		else
-		{
-			
-			return temp->cnt;
-		}
-	}
-
+	TNode<T>* temp = Search(value);
+	if (temp != NULL)
+		return temp->cnt;
 	return 0;
 }
 
@@ -115,10 +100,27 @@ T BST<T>::max()
 }
 
 template<class T>
-T BST<T>::successor()
+T BST<T>::successor(T value)
 {
-
-
+	TNode<T>* temp = Search(value);
+	if (temp == NULL)
+	{
+		cout << "Element does not exist on the tree" << endl;
+		return T();
+	}
+	if (temp->Right != NULL)
+	{
+		return min(temp->Right);
+	}
+	while (temp->Parent != NULL)
+	{
+		if (temp->Parent->Value > temp->Value)
+		{
+			return temp->Parent->Value  ;
+		}
+		temp = temp->Parent;
+	}
+	cout << "No successor for this element" << endl;
 	return T();
 }
 
@@ -155,5 +157,30 @@ T BST<T>::max(TNode<T>* node)
 	}
 
 	return node->Value;
+}
+
+template<class T>
+TNode<T>* BST<T>::Search(T value)
+{
+
+	TNode<T>* temp = root;
+	while (temp != NULL)
+	{
+		if (temp->Value > value)
+		{
+			temp = temp->Left;
+		}
+		else if (temp->Value < value)
+		{
+			temp = temp->Right;
+		}
+		else
+		{
+
+			return temp;
+		}
+	}
+
+	return nullptr;
 }
 

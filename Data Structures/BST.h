@@ -13,6 +13,7 @@ protected:
 	void Inorder(TNode<T>* node);
 	T min(TNode<T>* node);
 	T max(TNode<T>* node);
+	TNode<T>* Search (T value);
 public:
 	TNode<T>* root;
 	int size;
@@ -23,7 +24,7 @@ public:
 	int  count(T value);
 	T min();
 	T max();
-	T successor();
+	T successor(T value);
 
 };
 #endif
