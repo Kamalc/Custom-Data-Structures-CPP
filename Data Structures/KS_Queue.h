@@ -24,3 +24,5 @@ public:
 	T back();
 	bool empty();
 };
+
+#include"KS_Queue.cpp"

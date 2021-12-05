@@ -85,13 +85,3 @@ bool KS_Queue<T>::empty()
 {
 	return (size==0);
 }
-void QTemporaryFunction()
-{
-	KS_Queue<int> test;
-	test.pop();
-	test.print();
-	test.push(5);
-	test.empty();
-	test.front();
-	test.back();
-}

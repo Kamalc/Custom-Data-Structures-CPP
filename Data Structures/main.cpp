@@ -81,8 +81,9 @@ void test_BST()
 
 	test.print();
 }
+
 int main()
 {
-	test_BST();
+	TestQueue();
 	return 0;
 }
