@@ -83,24 +83,30 @@ void test_stack()
 
 void test_BST()
 {
-	BST<float> test;
-	test.insert(5.4f);
-	test.insert(10.8f);
-	test.insert(5.5f);
+	BST<int> test;
+	test.insert(5);
+	test.erase(5);
+
+	test.insert(10);
+	test.insert(5);
 	test.insert(20);
 	test.insert(3);
-	test.insert(2.2f);
+	test.insert(2);
 	test.insert(11);
 	test.insert(25);
-	test.insert(5.4f);
+	test.insert(5);
 
 	test.print();
 	cout <<"   "<< endl;
+
+	test.erase(5);
+	test.insert(5);
+	cout << "   " << endl;
+	test.print();
+
 	//cout << test.count(5) << endl;
 	//cout << test.min() << endl;
 	//cout << test.max() << endl;
-	cout << endl;
-	cout << test.successor(11) << endl;
 }
 
 int main()

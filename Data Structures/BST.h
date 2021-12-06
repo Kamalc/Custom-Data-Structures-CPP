@@ -26,7 +26,7 @@ public:
 	T min();
 	T max();
 	T successor(T value);
-
+	void erase(T value);
 };
 #endif
 #include"BST.cpp"

@@ -6,6 +6,6 @@ public:
 	TNode* Right;
 	TNode* Left;
 	TNode* Parent;
-	int cnt = 1 ;
+	int cnt = 0 ;
 };
 

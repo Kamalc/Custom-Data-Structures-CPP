@@ -200,3 +200,72 @@ TNode<T>* BST<T>::Search(T value)
 	return nullptr;
 }
 
+
+template<class T>
+void BST<T>::erase(T value)
+{
+	TNode<T>* temp = Search(value);
+	TNode<T>* tempSucc;
+	TNode<T>* tempNode = new TNode<T>;
+	if (temp == NULL)
+	{
+		cout << "Element does not exist on the tree" << endl;
+		return void();
+	}
+
+
+
+	if (temp->Right == NULL && temp->Left == NULL)
+	{
+		if (temp->Parent == NULL)
+		{
+			root = NULL;
+		}
+		else if (temp->Parent->Value > temp->Value)
+		{
+			temp->Parent->Left = NULL;
+		}
+		else
+		{
+			temp->Parent->Right = NULL;
+		}
+
+		
+		delete temp;
+	}
+	else if (temp->Right != NULL && temp->Left != NULL)
+	{
+		tempSucc = successor(temp);
+		tempNode->cnt = tempSucc->cnt;
+		tempNode->Value = tempSucc->Value;
+		erase(tempSucc->Value);
+		temp->cnt = tempNode->cnt;
+		temp->Value = tempNode->Value;
+		delete tempNode;
+
+	}
+	else
+	{
+		TNode<T>* child = new TNode<T>;;
+		if (temp->Right != NULL)
+			child = temp->Right;
+		if (temp->Left != NULL)
+			child = temp->Left;
+
+		if (temp->Parent->Value > temp->Value)
+		{
+
+			temp->Parent->Left = child;
+			child->Parent = temp->Parent;
+		}
+		else
+		{
+			temp->Parent->Right = child;
+			child->Parent = temp->Parent;
+		}	
+		if (child->Parent == NULL)
+			root = child;
+		delete temp;
+	}
+	
+}
